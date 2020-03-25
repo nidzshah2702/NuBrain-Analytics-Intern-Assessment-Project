@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title> </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script> 
+$(document).ready(function(){
+  
+    $(".panel").fadeIn("slow");
+});
+</script>
+
+	<style>
+	.login-form {
+    width: 340px;
+    margin: 50px auto;
+    padding-top: 150px;
+    display:block;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.gradient-color{
+    background:#18b9ce; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#4d80e4, rgba(190, 219, 243, 0.897));  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right,#4d80e4, #b2cee6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+}
+	</style>
+</head>
+
+<body class=" gradient-color">
+	
+	<div class="fluid-container gradient-color">
+		<div class="login-form">
+			<form  id="loginform" action="/auth/login/" method="post">  {% csrf_token %}
+				<h2 class="text-center">Log in</h2>   
+				<span style="color:red;">{{error}} </span>    
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email" required="required">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password" required="required">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block">Log in</button>
+				</div>
+		
+			</form>
+			<p class="text-center" ><a href="/auth/register/" style="color:#000;">Create an Account</a></p>
+		</div>
+		</div>
+	
+
+</body>
+	
+	
+	
+</body>
+</html>

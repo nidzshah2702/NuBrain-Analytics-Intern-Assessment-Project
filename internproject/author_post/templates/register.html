@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title> </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script> 
+$(document).ready(function(){
+  
+    $(".panel").fadeIn("slow");
+});
+</script>
+
+	<style>
+		.panel{
+			display:none;
+		}
+		.gradient-color{
+			background:#18b9ce; /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right,#4d80e4, rgba(190, 219, 243, 0.897));  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right,#4d80e4, #b2cee6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			position: relative;
+		}
+		
+		.card{
+			width:50%;
+			margin:auto;
+            margin-bottom: 25px;
+			color:#000000;
+			height:auto;
+			-webkit-box-shadow: 0px 3px 25px -6px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 3px 25px -6px rgba(0,0,0,0.75);
+			box-shadow: 0px 3px 25px -6px rgba(0,0,0,0.75);
+			position: relative;
+			padding: 20px;
+
+		}
+		label{
+			padding:5px;
+		}
+		td{
+			padding:3px;
+
+		}
+		.card-gradient
+		{
+			background: #4e54c8;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom,#4d80e4, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+						position: relative;
+
+		}
+		nav{
+
+background:#fff ; 
+color: #18b9ce;
+
+}
+.navs a{
+
+	font-size:20px;
+  color: #18b9ce;
+
+	
+
+}
+	</style>
+</head>
+
+<body class="container gradient-color">
+	
+<div class="container-fluid pt-5 panel" >
+	<div class="card row">
+		<div style="color:#000;">
+			<h2>Sign up</h2>
+			<hr>
+			<form method="post" action="/auth/register/" >                {% csrf_token %}
+                <div class="form-group">
+				<label for="name" class="text-primary">Firstname</label><span style="color:red;" >{{error}}</span>
+					<input type="text" class="form-control" id="firstname"  value="{{firstname}}"  name="first_name" placeholder="Enter firstname" />
+                </div>
+                <div class="form-group">
+                    <label for="name" class="text-primary">Lastname</label>
+                        <input type="text" class="form-control" id="lastname"  value="{{lastname}}"  name="last_name" placeholder="Enter lastname" />
+                    </div>
+				<div class="form-group">
+					<label for="email" class="text-primary">Email Id</label>
+					<input type="email" class="form-control" id="email" value="{{email}}" name="email" placeholder="Enter Email ID" />
+				</div>
+				<div class="form-group">
+                    <label for="name" class="text-primary"></label>
+                        <input type="date" class="form-control" id="birthdate"  name="birthdate" placeholder="Enter birthdate" />
+                    </div>
+				<div class="form-group">
+					<label for="password" class="text-primary">Password</label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" />
+				</div>
+				<button type="submit" class="btn btn-primary">Register</button>
+				
+			</form>
+		</div >
+	</div>
+
+</body>
+	
+	
+	
+</body>
+</html>

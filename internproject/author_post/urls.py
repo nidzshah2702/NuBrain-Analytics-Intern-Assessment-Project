@@ -9,7 +9,12 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-	 url(r'^details/author/(?P<id>\w+)/$', author_details),	 url(r'^details/post/(?P<id>\w+)/$', post_details),url(r'^posts/$', view_posts)
+	 url(r'^details/author/(?P<id>\w+)/$', author_details),	 url(r'^details/post/(?P<id>\w+)/$', post_details),
+	 url(r'^posts/$', view_posts),
+	 url(r'^auth/register/$', register),
+	 url(r'^auth/login/$', login), url(r'^auth/logout/$', logout)
+
+
 
 	
 	
